@@ -39,10 +39,12 @@ const FlipCard=(props:any)=>{
         <Animated.View
         style={[
           frontStyle,
+          styles.cardStyle,
           {
             backgroundColor:props?.data.color,
+            paddingLeft:16
           },
-          styles.cardStyle
+          
         ]}
       >
          <Text style={styles.cardTopText}>{props.data.label}</Text>
@@ -60,7 +62,10 @@ const FlipCard=(props:any)=>{
           style={[
             backStyle,
             {
-              backgroundColor:props?.data.color, width: "100%",
+              backgroundColor:props?.data.color,
+             paddingHorizontal:5,
+             justifyContent:"center",
+             alignItems:"center"
             },
             styles.cardStyle
           ]}
@@ -82,11 +87,9 @@ const styles=StyleSheet.create({
   borderRadius:20,marginHorizontal:10,overflow:"hidden"},
   cardStyle:  {borderRadius:20,
   height: "100%",
+  width:"100%",
   backfaceVisibility: "hidden",
   position: "absolute",
-  paddingHorizontal:5,
-  justifyContent:"center",
-  alignItems:"center"
   },
   cardTopText:{fontSize:15,fontWeight:"400",color:"white",marginTop:15,marginBottom:20},
   cardBottomText:{fontSize:30,fontWeight:"600",color:"white"},
